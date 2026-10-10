@@ -10,7 +10,9 @@ const output = new URL('dist/', root);
 const manifest = JSON.parse(await readFile(new URL('weights-manifest.json', root), 'utf8'));
 const pkg = JSON.parse(await readFile(new URL('package.json', root), 'utf8'));
 const verifyOnly = process.argv.includes('--verify-only');
-if (pkg.version !== manifest.oidnVersion) throw new Error('Package and OIDN versions must match.');
+if (pkg.version.split('-')[0] !== manifest.oidnVersion) {
+  throw new Error('Package version must match the OIDN version, with an optional packaging revision.');
+}
 await mkdir(output, { recursive: true });
 
 async function verify(url, expected) {

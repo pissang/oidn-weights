@@ -1,6 +1,6 @@
 {
   "name": "oidn-weights",
-  "version": "2.3.0",
+  "version": "2.3.0-1",
   "description": "Trained Intel Open Image Denoise 2.3.0 network weights in TZA format",
   "license": "Apache-2.0",
   "repository": {
@@ -29,6 +29,8 @@
   },
   "scripts": {
     "build": "node scripts/prepare-package.mjs",
-    "test": "node scripts/prepare-package.mjs --verify-only"
+    "test": "node scripts/prepare-package.mjs --verify-only",
+    "prepack": "node scripts/check-publish-root.mjs",
+    "prepublishOnly": "node scripts/check-publish-root.mjs"
   }
 }

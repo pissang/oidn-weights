@@ -1,0 +1,34 @@
+{
+  "name": "oidn-weights",
+  "version": "2.3.0",
+  "description": "Trained Intel Open Image Denoise 2.3.0 network weights in TZA format",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pissang/oidn-weights.git"
+  },
+  "homepage": "https://github.com/pissang/oidn-weights#readme",
+  "bugs": {
+    "url": "https://github.com/pissang/oidn-weights/issues"
+  },
+  "keywords": [
+    "oidn",
+    "denoising",
+    "weights",
+    "webgpu"
+  ],
+  "files": [
+    "*.tza",
+    "LICENSE.txt",
+    "README.md",
+    "weights-manifest.json"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "build": "node scripts/prepare-package.mjs",
+    "test": "node scripts/prepare-package.mjs --verify-only"
+  }
+}
